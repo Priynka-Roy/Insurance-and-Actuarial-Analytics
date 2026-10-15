@@ -27,3 +27,7 @@ This is an internal project review using five professional perspectives. It is n
 ## Residual limitations
 
 The project cannot establish prospective calibration, recover missing payment histories, measure insurer profits, settle legal rating-factor permission or validate catastrophe/regulatory tails. Full source-level reproduction requires downloading the permitted originals; the public app intentionally distributes aggregate summaries only. Source license metadata and package licensing are reported separately. External actuarial, legal and operational review would be required for a commercial use case.
+
+## Executed verification
+
+On 16 October 2026, 86 tests (including 17 Streamlit AppTests), Ruff and the six-file hash/semantic verifier passed. GitHub Actions passed on Linux/Python 3.12, including startup smoke testing: https://github.com/Priynka-Roy/actuarylab-ai-insurance-pricing-risk/actions/runs/38812962850. Desktop and mobile browser checks confirmed no page overflow, working navigation/pricing/submitted simulation, and no captured JavaScript errors or app exceptions. Controlled file-change/reload activity emitted WebSocket-close warnings without persistent failure. A severity-decile label issue was corrected and covered by a regression test: claim observations are not policy counts or exposure-years. Public deployment remains intentionally separate.

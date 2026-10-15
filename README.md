@@ -4,7 +4,7 @@
 
 An educational insurance data science project by **Priynka Roy**. ActuaryLab AI investigates how exposure-aware claim frequency, positive-payment severity and direct pure-premium models compare on historical French motor third-party liability data, then explores hypothetical pricing and aggregate portfolio risk.
 
-[Methodology](docs/METHODOLOGY.md) · [Data card](docs/DATA_CARD.md) · [Model card](docs/MODEL_CARD.md) · [Portfolio case study](docs/PORTFOLIO_CASE_STUDY.md) · [Deployment](docs/DEPLOYMENT.md)
+[Delivery report](docs/DELIVERY_REPORT.md) · [Methodology](docs/METHODOLOGY.md) · [Data card](docs/DATA_CARD.md) · [Model card](docs/MODEL_CARD.md) · [Portfolio case study](docs/PORTFOLIO_CASE_STUDY.md) · [Deployment](docs/DEPLOYMENT.md)
 
 This is a professional portfolio project, not a production pricing engine, insurance offer, reserving model, regulatory capital model or approved tariff. No insurer sponsors or endorses it. The project does not claim current Finnish portfolio representativeness or professional actuarial certification.
 
