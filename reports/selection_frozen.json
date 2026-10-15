@@ -1,0 +1,10 @@
+{
+  "frequency": "Poisson HGB leaves=15",
+  "severity": "Gamma GLM alpha=0.1",
+  "pure_premium": "Two-part frequency \u00d7 severity",
+  "direct_tweedie": "Tweedie p=1.7 alpha=0.1",
+  "criterion": "Minimum validation Poisson deviance per exposure for frequency; mean validation Gamma deviance for severity; minimum exposure-weighted Tweedie deviance at COMMON fixed power1.5 for premium (even for different fitted powers). Ties retain earlier simpler candidate. No refit after validation selection.",
+  "refit": false,
+  "test_used_for_selection": false,
+  "frozen_protocol_sha256": "724188ab105e6c8debc312a41db8065d49465845fd00a1438164b31bfac00ff7"
+}

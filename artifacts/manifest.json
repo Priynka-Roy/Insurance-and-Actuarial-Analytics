@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "files": {
+    "artifacts/dashboard.json": "8cac2eb9c8677f3917576301e9ad8774eccdea3c61e9e04a16381f2c8c3c5a05",
+    "reports/results.json": "8cac2eb9c8677f3917576301e9ad8774eccdea3c61e9e04a16381f2c8c3c5a05",
+    "configs/protocol.json": "724188ab105e6c8debc312a41db8065d49465845fd00a1438164b31bfac00ff7",
+    "reports/data_provenance.json": "eb2004d664b4de781c425ce82f22cf52732842f60c5582a26210a32b18803d37",
+    "reports/reconciliation.json": "5b48d617f63988a4293b3179c7104729ffb8b4ad0a2c645b3315da67be3ac5ad",
+    "reports/selection_frozen.json": "ba3d7f99a5ff1f589f243b81af94aed0e7b5a03932e0961dcacf488baf495e0f"
+  }
+}

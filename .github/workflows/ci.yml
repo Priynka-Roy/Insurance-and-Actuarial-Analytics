@@ -1,0 +1,30 @@
+name: Quality and deployment readiness
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: python -m pip install -r requirements-dev.txt
+      - run: ruff check .
+      - run: pytest -q
+      - run: python scripts/verify_artifacts.py
+      - name: Streamlit startup without raw data or training
+        shell: bash
+        run: |
+          streamlit run streamlit_app.py --server.headless true --server.port 8504 > /tmp/actuarylab-streamlit.log 2>&1 &
+          streamlit_pid=$!
+          trap 'kill "$streamlit_pid" 2>/dev/null || true' EXIT
+          for attempt in {1..40}; do
+            if curl --fail --silent http://127.0.0.1:8504/_stcore/health; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/actuarylab-streamlit.log
+          exit 1

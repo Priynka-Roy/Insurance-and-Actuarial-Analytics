@@ -1,0 +1,30 @@
+[
+  {
+    "openml_id": 41214,
+    "name": "freMTPL2freq",
+    "version": "1",
+    "license": "CC0",
+    "metadata_url": "https://www.openml.org/api/v1/json/data/41214",
+    "source_url": "https://openml.org/data/v1/download/20649148/freMTPL2freq.arff",
+    "retrieved_utc": "2026-10-15T19:41:46.214162+00:00",
+    "filename": "freMTPL2freq.arff",
+    "bytes": 36288567,
+    "sha256": "a45363e056e2ea56408b38eeb9d4d04d7f6c6982eb7a14ed5e807c7c71807cdd",
+    "official_md5": "f8875568bf0ca622929105197e2db613",
+    "citation": "C. Dutang and A. Charpentier (2018), CASdatasets: Insurance datasets."
+  },
+  {
+    "openml_id": 41215,
+    "name": "freMTPL2sev",
+    "version": "1",
+    "license": "CC0",
+    "metadata_url": "https://www.openml.org/api/v1/json/data/41215",
+    "source_url": "https://openml.org/data/v1/download/20649149/freMTPL2sev.arff",
+    "retrieved_utc": "2026-10-15T19:41:48.422916+00:00",
+    "filename": "freMTPL2sev.arff",
+    "bytes": 376555,
+    "sha256": "047632016b87e132247124f449a95d6d0e9f8ba05f2fe0947ef76ab8aaa10e0a",
+    "official_md5": "24cc74449e3931cb1aad0d43a12e7a6e",
+    "citation": "C. Dutang and A. Charpentier (2018), CASdatasets: Insurance\n  datasets."
+  }
+]

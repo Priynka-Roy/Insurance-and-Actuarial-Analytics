@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "frozen_before_model_fit": true,
+  "seed": 42,
+  "split": "SHA256 seed:integerID; first64bits/2**64 <.6 train, <.8 validation, otherwise test",
+  "proportions": [0.6, 0.2, 0.2],
+  "population": "Unique policy identifiers, finite complete predictors, valid strictly positive exposure, nonnegative integer source claim count matching linked severity records, no missing or negative severity payments. No upper exposure or payment clipping.",
+  "frequency_target": "Strictly positive payment count / exposure-year, exposure weighted; compatible with positive Gamma severity",
+  "severity_target": "Individual strictly positive payment, all claims inherit policy split; zero-cost claims audited and excluded from BOTH positive-frequency count and severity target",
+  "preprocessing": "Fixed log1p density, numeric training median and standard deviation, onehot(dropfirst) or ordinal training categories with explicit categorical HGB semantics; no target-derived transforms",
+  "frequency_candidates": "Intercept; Poisson alpha0/.001/.1; Poisson HGB100iter lr.05 leaves7/15 minleaf100 L2=1, no early stopping; NB2 full training moment-dispersion diagnostic if Pearson>1.2",
+  "severity_candidates": "Intercept; Gamma log GLM alpha0/.01/.1/1, individual unweighted claims",
+  "pure_premium_candidates": "Selected frequency*selected severity; Tweedie log GLM p1.3/1.5/1.7 alpha.001/.1",
+  "selection": "Minimum validation Poisson deviance per exposure for frequency; mean validation Gamma deviance for severity; minimum exposure-weighted Tweedie deviance at COMMON fixed power1.5 for premium (even for different fitted powers). Ties retain earlier simpler candidate. No refit after validation selection.",
+  "uncertainty": "250 ordinary policy-cluster bootstrap resamples, seed4242; pointwise percentile95%; fixed models, no tuning/training uncertainty, all claim costs/counts clustered in policies",
+  "sensitivity": "Training-only payment99percentile cap diagnostic with validation capped and uncapped metrics; does not change primary full-cost population or selection. Training Gamma relative Pearson moment and lognormal logresidual SD for simulation shape assumptions.",
+  "test_policy": "Evaluate only after all selection decisions; additional displayed diagnostics are descriptive, not used for reselection",
+  "currency": "Source claim-amount monetary units; historical nominal values; no silent EUR conversion",
+  "limitations": "Historical French MTPL; no reliable timestamps or prospective split, censoring/development unknown, strict reconciliation changes population, association not causality, no pricing/regulatory approval"
+}
